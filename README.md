@@ -12,6 +12,20 @@ Pass props
 
 Use star wars API? Sveltekit + GraphQL is ripe from a google search perspective?
 
+```gql
+query Query {
+  species(speciesID: "2") {
+    name
+    personConnection {
+      people {
+        name
+        height
+      }
+    }
+  }
+}
+```
+
 ## 3. Grab graphql data from Contentful
 
 Do the rest, add map, etc
