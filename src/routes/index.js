@@ -36,13 +36,34 @@ export async function GET() {
   })
 
   if (response.ok) {
-    const json = await response.json()
+    const { data } = await response.json()
 
-    console.log(json)
+    const { items } = data.noteCollection
+    const formatOptions = {
+      month: 'long',
+      day: 'numeric',
+      year: 'numeric',
+      weekday: 'long',
+    }
+
+    const notes = items.map((i) => {
+      const date = new Date(i.date)
+      date.setFullYear('1878') // hack because Contentful doesn't let me set a date in 1878
+      const formattedDate = new Intl.DateTimeFormat(
+        'en-US',
+        formatOptions
+      ).format(date)
+      return {
+        location: i.location,
+        date: formattedDate,
+      }
+    })
+
+    notes.sort((a, b) => a.date - b.date)
 
     return {
       body: {
-        repos: [],
+        notes,
       },
     }
   }
