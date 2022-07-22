@@ -51,7 +51,11 @@ export async function GET() {
     const notes = items
       .map((i) => {
         const date = new Date(i.date)
-        date.setFullYear('1878') // hack because Contentful doesn't let me set a date in 1878
+
+        if (date.getFullYear() === 2001) {
+          date.setFullYear('1878') // hack because Contentful doesn't let me set a date in 1878
+        }
+
         i.date = date
         return i
       })
@@ -71,7 +75,7 @@ export async function GET() {
         }
       })
 
-    console.log(notes)
+    // console.log(notes)
 
     return {
       body: {
