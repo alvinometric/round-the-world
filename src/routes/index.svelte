@@ -1,12 +1,13 @@
 <script>
   import Note from '$lib/Note.svelte'
+  import Header from '../lib/Header.svelte'
   import Scroller from '@sveltejs/svelte-scroller'
 
   let index, offset, progress
   export let notes
 </script>
 
-<h1>Round the world</h1>
+<Header />
 
 <!-- the Note component is wrapped in an article tag, which I need to specify in "query" -->
 <Scroller
@@ -35,7 +36,7 @@
 
 <style>
   .notes {
-    width: 35%;
+    width: 40%;
   }
 
   [slot='background'] {
