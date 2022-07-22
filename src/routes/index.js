@@ -1,4 +1,5 @@
 import 'dotenv/config'
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
 
 const { SPACE_ID, ACCESS_TOKEN } = process.env
 
@@ -46,20 +47,29 @@ export async function GET() {
       weekday: 'long',
     }
 
-    const notes = items.map((i) => {
-      const date = new Date(i.date)
-      date.setFullYear('1878') // hack because Contentful doesn't let me set a date in 1878
-      const formattedDate = new Intl.DateTimeFormat(
-        'en-US',
-        formatOptions
-      ).format(date)
-      return {
-        location: i.location,
-        date: formattedDate,
-      }
-    })
+    const notes = items
+      .map((i) => {
+        const date = new Date(i.date)
+        date.setFullYear('1878') // hack because Contentful doesn't let me set a date in 1878
+        i.date = date
+        return i
+      })
+      .sort((a, b) => a.date - b.date)
+      .map((i) => {
+        const { location, date } = i
+        const formattedDate = new Intl.DateTimeFormat(
+          'en-US',
+          formatOptions
+        ).format(date)
 
-    notes.sort((a, b) => a.date - b.date)
+        return {
+          location,
+          date: formattedDate,
+          text: documentToHtmlString(i.content.json),
+        }
+      })
+
+    console.log(notes)
 
     return {
       body: {

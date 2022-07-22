@@ -20,6 +20,7 @@
   },
   "type": "module",
   "dependencies": {
+    "@contentful/rich-text-html-renderer": "^15.13.1",
     "dotenv": "^16.0.1"
   }
 }

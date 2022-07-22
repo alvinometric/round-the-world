@@ -1,11 +1,11 @@
 <script>
   export let date
-  export let content
+  export let text
 </script>
 
 <article class="card">
   <h2>{date}</h2>
-  <p>{content}</p>
+  <p>{@html text}</p>
 </article>
 
 <style>
