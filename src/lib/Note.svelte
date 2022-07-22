@@ -6,7 +6,10 @@
 
 <article class="card">
   <h3>{date}</h3>
-  <small>{location}</small>
+  {#if location}
+    <small>{location}</small>
+  {/if}
+
   <p>{@html text}</p>
 </article>
 
@@ -17,6 +20,8 @@
 
   small {
     text-transform: uppercase;
+    text-align: right;
+    display: block;
   }
 
   p {

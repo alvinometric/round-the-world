@@ -1,7 +1,8 @@
 <script>
+  import Scroller from '@sveltejs/svelte-scroller'
   import Note from '$lib/Note.svelte'
   import Header from '../lib/Header.svelte'
-  import Scroller from '@sveltejs/svelte-scroller'
+  import Preface from '../lib/Preface.svelte'
 
   let index, offset, progress
   export let notes
@@ -9,9 +10,11 @@
 
 <Header />
 
+<Preface />
+
 <!-- the Note component is wrapped in an article tag, which I need to specify in "query" -->
 <Scroller
-  top={0.2}
+  top={0.3}
   bottom={0.8}
   query="article"
   bind:index
@@ -20,8 +23,8 @@
 >
   <div slot="background">
     <p>
-      This is the background content. It will stay fixed in place while the
-      foreground scrolls over the top.
+      Background. Stays fixed in place while the foreground scrolls over the
+      top.
     </p>
 
     <p>Section {index + 1} is currently active.</p>
