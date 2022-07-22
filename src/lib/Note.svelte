@@ -12,4 +12,8 @@
   .card {
     border-top: 1px dotted black;
   }
+
+  p {
+    max-width: 60ch;
+  }
 </style>
