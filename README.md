@@ -4,13 +4,27 @@
 
 Create a barebones app looking at sveltekit concepts
 
+Use SWAPI REST
+
 Fetch from API
 Create individual components
 Pass props
 
+Droids of star wars: Need 2 requests, 1st species/2 then the people array
+
+with graphql only one request
+
 ## 2. Add graphql
 
-Use star wars API? Sveltekit + GraphQL is ripe from a google search perspective?
+Use star wars API ? Sveltekit + GraphQL is ripe from a google search perspective?
+
+https://swapi-graphql.netlify.app/.netlify/functions/index
+
+---
+
+https://github.com/prisma-labs/graphql-request
+
+https://explorers.netlify.com/learn/building-with-sveltekit-and-graphcms/fetching-data-in-graphql
 
 ## 3. Grab graphql data from Contentful
 
