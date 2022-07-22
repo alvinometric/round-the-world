@@ -1,11 +1,12 @@
 <script>
   export let date
   export let text
+  export let location
 </script>
 
 <article class="card">
   <h3>{date}</h3>
-  <small>New York</small>
+  <small>{location}</small>
   <p>{@html text}</p>
 </article>
 

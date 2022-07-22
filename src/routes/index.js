@@ -12,7 +12,8 @@ const query = `
   noteCollection{
     items{
       date
-      location {
+      location
+      coordinates {
         lat
         lon
       }
@@ -56,13 +57,14 @@ export async function GET() {
       })
       .sort((a, b) => a.date - b.date)
       .map((i) => {
-        const { location, date } = i
+        const { coordinates, location, date } = i
         const formattedDate = new Intl.DateTimeFormat(
           'en-US',
           formatOptions
         ).format(date)
 
         return {
+          coordinates,
           location,
           date: formattedDate,
           text: documentToHtmlString(i.content.json),
