@@ -1,16 +1,14 @@
 <script>
-  import Card from '$lib/Card.svelte'
-  export let repos
+  import Note from '$lib/Note.svelte'
+  export let notes
 </script>
 
-<main>
-  <h1>Round the world</h1>
-  <div class="cards">
-    {#each repos as repo}
-      <Card {...repo} />
-    {/each}
-  </div>
-</main>
+<h1>Round the world</h1>
+<div class="cards">
+  {#each notes as note}
+    <Note {...note} />
+  {/each}
+</div>
 
 <style>
   .cards {

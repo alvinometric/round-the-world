@@ -1,24 +1,79 @@
+import 'dotenv/config'
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
+
+const { SPACE_ID, ACCESS_TOKEN } = process.env
+
+console.log(
+  `https://graphql.contentful.com/content/v1/spaces/${SPACE_ID}/explore?access_token=${ACCESS_TOKEN}`
+)
+
+const query = `
+{
+  noteCollection{
+    items{
+      date
+      location {
+        lat
+        lon
+      }
+      content{
+        json
+      }
+    }
+  }
+}
+`
+
 export async function GET() {
-  const response = await fetch('https://api.github.com/orgs/sveltejs/repos')
+  const url = 'https://graphql.contentful.com/content/v1/spaces/' + SPACE_ID
+
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer ' + ACCESS_TOKEN,
+    },
+    body: JSON.stringify({ query }),
+  })
 
   if (response.ok) {
-    const json = await response.json()
+    const { data } = await response.json()
 
-    const repos = json.map((repo) => {
-      const { name, description, stargazers_count, html_url } = repo
-      return {
-        name,
-        description,
-        stars: stargazers_count,
-        url: html_url,
-      }
-    })
+    const { items } = data.noteCollection
+    const formatOptions = {
+      month: 'long',
+      day: 'numeric',
+      year: 'numeric',
+      weekday: 'long',
+    }
 
-    repos.sort((a, b) => b.stars - a.stars)
+    const notes = items
+      .map((i) => {
+        const date = new Date(i.date)
+        date.setFullYear('1878') // hack because Contentful doesn't let me set a date in 1878
+        i.date = date
+        return i
+      })
+      .sort((a, b) => a.date - b.date)
+      .map((i) => {
+        const { location, date } = i
+        const formattedDate = new Intl.DateTimeFormat(
+          'en-US',
+          formatOptions
+        ).format(date)
+
+        return {
+          location,
+          date: formattedDate,
+          text: documentToHtmlString(i.content.json),
+        }
+      })
+
+    console.log(notes)
 
     return {
       body: {
-        repos,
+        notes,
       },
     }
   }

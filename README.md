@@ -26,6 +26,20 @@ https://github.com/prisma-labs/graphql-request
 
 https://explorers.netlify.com/learn/building-with-sveltekit-and-graphcms/fetching-data-in-graphql
 
+```gql
+query Query {
+  species(speciesID: "2") {
+    name
+    personConnection {
+      people {
+        name
+        height
+      }
+    }
+  }
+}
+```
+
 ## 3. Grab graphql data from Contentful
 
 Do the rest, add map, etc
