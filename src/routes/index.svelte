@@ -3,47 +3,59 @@
   import Note from '$lib/Note.svelte'
   import Header from '../lib/Header.svelte'
   import Preface from '../lib/Preface.svelte'
+  import BigQuote from '../lib/BigQuote.svelte'
+  import Footer from '../lib/Footer.svelte'
+  import Map from '../lib/Map.svelte'
+  import { coords } from '../lib/stores'
 
-  let index, offset, progress
+  let index = -1
+
+  let offset, progress
+
+  const updateMap = () => {
+    console.log(index)
+    let currentNote = notes[index % notes.length]
+    if (currentNote) {
+      let { lat, lon } = currentNote.coordinates
+      coords.set({ lat, lon })
+    }
+  }
+
+  $: index, updateMap()
+
   export let notes
 </script>
 
-<Header />
+<section class="masthead">
+  <Header />
 
-<Preface />
+  <Preface />
+
+  <BigQuote />
+</section>
 
 <!-- the Note component is wrapped in an article tag, which I need to specify in "query" -->
-<Scroller
-  top={0.3}
-  bottom={0.8}
-  query="article"
-  bind:index
-  bind:offset
-  bind:progress
->
-  <div slot="background">
-    <p>
-      Background. Stays fixed in place while the foreground scrolls over the
-      top.
-    </p>
-
-    <p>Section {index + 1} is currently active.</p>
-  </div>
+<Scroller top={0} query="article" bind:index bind:offset bind:progress>
+  <Map slot="background" />
 
   <div class="notes" slot="foreground">
     {#each notes as note}
-      <Note {...note} />
+      <Note text={note.text} date={note.date} location={note.location} />
     {/each}
   </div>
 </Scroller>
 
+<Footer />
+
 <style>
-  .notes {
-    width: 40%;
+  .masthead {
+    max-width: 600px;
+    margin: 0 auto;
   }
 
-  [slot='background'] {
-    text-align: right;
+  .notes {
+    width: 60%;
+    box-sizing: border-box;
   }
 
   @media only screen and (max-width: 800px) {

@@ -1,9 +1,13 @@
 <script>
-  import './global.css'
+  import './global.scss'
 </script>
 
 <main>
   <slot />
 </main>
 
-<footer>Made with ❤️</footer>
+<style>
+  main {
+    width: 100%;
+  }
+</style>

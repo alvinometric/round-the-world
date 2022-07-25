@@ -16,6 +16,7 @@
 <style>
   .card {
     border-top: 1px dotted black;
+    padding: 0 1rem;
   }
 
   small {
@@ -24,7 +25,12 @@
     display: block;
   }
 
+  blockquote {
+    max-width: 300px;
+  }
+
   p {
     max-width: 60ch;
+    font-weight: 350;
   }
 </style>

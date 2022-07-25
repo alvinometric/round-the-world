@@ -22,6 +22,9 @@
   "dependencies": {
     "@contentful/rich-text-html-renderer": "^15.13.1",
     "@sveltejs/svelte-scroller": "^2.0.7",
-    "dotenv": "^16.0.1"
+    "dotenv": "^16.0.1",
+    "maplibre-gl": "^2.1.9",
+    "sass": "^1.54.0",
+    "svelte-inview": "^3.0.1"
   }
 }
