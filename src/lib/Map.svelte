@@ -1,26 +1,39 @@
 <script>
   import { onMount, onDestroy } from 'svelte'
   import maplibregl from 'maplibre-gl'
+  import photo from '$lib/assets/carnegie-photo.jpg'
   import { coords } from './stores'
 
   const style = {
     version: 8,
     sources: {
-      stamen: {
+      watercolor: {
         type: 'raster',
-        // List of other good-looking carto basemaps https://carto.com/help/building-maps/basemap-list/
         tiles: [
-          'https://stamen-tiles.a.ssl.fastly.net/toner-background/{z}/{x}/{y}.png',
+          'https://stamen-tiles.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg',
         ],
         tileSize: 256,
-        maxzoom: 19,
+        maxzoom: 10,
+      },
+      labels: {
+        type: 'raster',
+        tiles: [
+          '    http://stamen-tiles-d.a.ssl.fastly.net/toner-labels/{z}/{x}/{y}.png',
+        ],
+        tileSize: 256,
+        maxzoom: 10,
       },
     },
     layers: [
       {
-        id: 'stamen',
+        id: 'stamen-watercolor',
         type: 'raster',
-        source: 'stamen', // This must match the source key above
+        source: 'watercolor', // This must match the source key above
+      },
+      {
+        id: 'stamen-label',
+        type: 'raster',
+        source: 'labels', // This must match the source key above
       },
     ],
   }
@@ -29,19 +42,20 @@
   let map
   let marker
   let customMarker
+  let center = [-70.34106818527637, 41.865675358053686]
 
   onMount(() => {
     map = new maplibregl.Map({
       container,
       style,
-      center: [-70.34106818527637, 41.865675358053686],
+      center,
       minZoom: 5,
       maxZoom: 8,
       zoom: 7,
     })
 
     map.on('load', function () {
-      marker = new maplibregl.Marker(customMarker)
+      marker = new maplibregl.Marker(customMarker).setLngLat(center).addTo(map)
       map.scrollZoom.disable()
     })
   })
@@ -50,8 +64,8 @@
     if (map) {
       map.easeTo({ center: [c.lon, c.lat], duration: 4000 })
       setTimeout(() => {
-        marker.setLngLat([c.lon, c.lat]).addTo(map)
-      }, 2300)
+        marker.setLngLat([c.lon, c.lat])
+      }, 3000)
     }
   })
 
@@ -68,8 +82,9 @@
   <img
     class="marker"
     bind:this={customMarker}
-    src="https://placekitten.com/g/50/50/"
-    alt=""
+    src={photo}
+    aria-hidden="true"
+    alt="Portrait of Andrew Carnegie"
   />
   <div bind:this={container}>
     {#if map}
@@ -89,6 +104,8 @@
   .marker {
     width: 50px;
     height: 50px;
+    border: 2px solid gold;
+    border-radius: 100%;
   }
 
   section {
