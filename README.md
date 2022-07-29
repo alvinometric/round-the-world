@@ -4,6 +4,8 @@
 
 Create a barebones app looking at sveltekit concepts
 
+https://divinalingua.it/en
+
 Use SWAPI REST
 
 Fetch from API

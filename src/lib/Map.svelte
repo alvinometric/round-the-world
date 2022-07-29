@@ -33,7 +33,7 @@
       {
         id: 'stamen-label',
         type: 'raster',
-        source: 'labels', // This must match the source key above
+        source: 'labels',
       },
     ],
   }
