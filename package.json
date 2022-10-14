@@ -11,12 +11,13 @@
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",
+    "@sveltejs/adapter-static": "next",
     "@sveltejs/kit": "next",
+    "mdsvex": "^0.10.6",
     "prettier": "^2.7.1",
     "prettier-plugin-svelte": "^2.7.0",
     "svelte": "^3.50.1",
-    "vite": "^3.1.0",
-    "mdsvex": "^0.10.6"
+    "vite": "^3.1.0"
   },
   "type": "module",
   "dependencies": {
