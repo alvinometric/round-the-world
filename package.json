@@ -11,7 +11,6 @@
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",
-    "@sveltejs/adapter-static": "next",
     "@sveltejs/kit": "next",
     "mdsvex": "^0.10.6",
     "prettier": "^2.7.1",
