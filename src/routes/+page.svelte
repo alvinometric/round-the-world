@@ -7,6 +7,7 @@
   import Footer from '../lib/Footer.svelte'
   import Map from '../lib/Map.svelte'
   import { coords } from '../lib/stores'
+  import Signature from '../lib/Signature.svelte'
 
   export let data
 
@@ -31,9 +32,9 @@
   <Header />
 
   <Preface />
-
-  <BigQuote />
 </section>
+
+<BigQuote />
 
 <!-- the Note component is wrapped in an article tag, which I need to specify in "query" -->
 <Scroller top={0} query="article" bind:index bind:offset bind:progress>
@@ -52,6 +53,7 @@
   .masthead {
     max-width: 600px;
     margin: 0 auto;
+    font-size: 1.25rem;
   }
 
   .notes {

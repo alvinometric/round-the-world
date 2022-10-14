@@ -10,10 +10,14 @@
     <small>{location}</small>
   {/if}
 
-  <p>{@html text}</p>
+  <section>{@html text}</section>
 </article>
 
-<style>
+<style lang="scss">
+  h3 {
+    margin-bottom: 0;
+  }
+
   .card {
     border-top: 1px dotted black;
     padding: 0 1rem;
@@ -25,11 +29,24 @@
     display: block;
   }
 
-  blockquote {
+  .card :global(blockquote) {
+    font-style: italic;
+    font-weight: 600;
+    position: relative;
+    margin: 2rem auto;
     max-width: 300px;
+    font-size: 1.5rem;
   }
 
-  p {
+  .card :global(blockquote:before) {
+    content: '“';
+    position: absolute;
+    left: 0;
+    font-size: 3rem;
+    transform: translate(-100%, -1.5rem);
+  }
+
+  section {
     max-width: 60ch;
     font-weight: 350;
   }

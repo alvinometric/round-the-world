@@ -1,0 +1,8 @@
+In 1878, Andrew Carnegie (of Carnegie Hall and Carnegie Mellon University) decided to go on a world tour.
+
+During that journey, he kept a diary, which he then published as a book. I re-created an interactive version of selected entries from October 1878 to January 1879 for my first project at [Contentful](https://www.contentful.com/blog/category/developers/).
+
+The book is in the public domain, download the ebook:
+
+- [For Kindle](/round-the-world.mobi).
+- [For other e-readers](/round-the-world.epub).

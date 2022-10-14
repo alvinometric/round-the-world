@@ -34,21 +34,8 @@ a {
   }
 }
 
-blockquote {
-  font-style: italic;
-  font-weight: 600;
-  position: relative;
-  margin: 2rem auto;
-  max-width: 300px;
-  font-size: 1.5rem;
-
-  &:before {
-    content: '“';
-    position: absolute;
-    left: 0;
-    font-size: 3rem;
-    transform: translate(-100%, -1.5rem);
-  }
+ul {
+  margin: 0;
 }
 
 .separator {
@@ -59,6 +46,10 @@ blockquote {
 
 p {
   margin-bottom: 1rem;
+}
+
+p:has(+ ul) {
+  margin-bottom: 0;
 }
 
 h1,
