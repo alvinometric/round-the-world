@@ -36,4 +36,9 @@
   p {
     font-style: italic;
   }
+
+  h2 {
+    color: var(--highlight);
+    font-weight: 550;
+  }
 </style>

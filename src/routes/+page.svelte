@@ -7,7 +7,6 @@
   import Footer from '../lib/Footer.svelte'
   import Map from '../lib/Map.svelte'
   import { coords } from '../lib/stores'
-  import Signature from '../lib/Signature.svelte'
 
   export let data
 

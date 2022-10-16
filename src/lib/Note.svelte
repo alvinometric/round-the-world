@@ -34,7 +34,7 @@
     font-weight: 600;
     position: relative;
     margin: 2rem auto;
-    max-width: 300px;
+    max-width: 350px;
     font-size: 1.5rem;
   }
 
@@ -46,8 +46,19 @@
     transform: translate(-100%, -1.5rem);
   }
 
+  .card :global(blockquote p) {
+    margin: 0;
+  }
+
   section {
     max-width: 60ch;
     font-weight: 350;
+  }
+
+  section > :global(p:first-child:first-letter) {
+    font-size: 3rem;
+    float: left;
+    margin: 0.2em 0.1em 0.1em 0;
+    font-weight: 500;
   }
 </style>
