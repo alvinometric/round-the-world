@@ -2,7 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@1,200..800&display=swap');
 
 :root {
-  --textColor: black;
+  --textColor: #262626;
+  --bkg: #f8f2e3;
   --highlight: rgb(186, 21, 40);
 }
 
@@ -19,7 +20,7 @@ body {
   font-weight: 400;
   line-height: 1.75;
   font-size: 112.5%; /*18px*/
-  background: #f8f2e3;
+  background: var(--bkg);
   color: var(--textColor);
 }
 

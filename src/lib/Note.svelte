@@ -58,7 +58,8 @@
   section > :global(p:first-child:first-letter) {
     font-size: 3rem;
     float: left;
-    margin: 0.2em 0.1em 0.1em 0;
+    margin-right: 0.1em;
     font-weight: 500;
+    line-height: 1.2;
   }
 </style>
