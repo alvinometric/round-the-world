@@ -1,10 +1,15 @@
 <script>
   import compass from '$lib/assets/compass.svg'
+  import getReducedMotion from '$lib/reduced-motion'
 
   let y
   let rotation = 0
 
   let updateRotation = () => {
+    const isReducedMotion = getReducedMotion()
+
+    if (isReducedMotion) return
+
     // TODO wrap value?
     rotation = (y / innerHeight) * 360
   }
@@ -25,9 +30,8 @@
 
 <style>
   .compass {
-    width: 80px;
-    position: absolute;
-    right: 0;
-    bottom: -25%;
+    width: 110px;
+    margin: 2rem auto;
+    display: block;
   }
 </style>

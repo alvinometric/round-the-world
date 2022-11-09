@@ -1,4 +1,4 @@
-In 1878, Andrew Carnegie (of Carnegie Hall and Carnegie Mellon University) decided to go on a world tour.
+In 1878, Andrew Carnegie (the person who Carnegie Hall and Carnegie Mellon University are named after) decided to go on a world tour.
 
 During that journey, he kept a diary, which he then published as a book. I re-created an interactive version of selected entries from October 1878 to January 1879 for my first project at [Contentful](https://www.contentful.com/blog/category/developers/).
 

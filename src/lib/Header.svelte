@@ -4,13 +4,12 @@
 </script>
 
 <header>
-  <HeaderElements />
   <h1>Round The World</h1>
 
   <HeaderText />
 </header>
 
-<p class="separator">⁂</p>
+<HeaderElements />
 
 <style>
   h1 {

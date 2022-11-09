@@ -1,7 +1,5 @@
-import { env } from '$env/dynamic/private'
+import { SPACE_ID, ACCESS_TOKEN } from '$env/static/private'
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
-
-const { SPACE_ID, ACCESS_TOKEN } = env
 
 console.log(
   `https://graphql.contentful.com/content/v1/spaces/${SPACE_ID}/explore?access_token=${ACCESS_TOKEN}`
