@@ -7,6 +7,7 @@
   import Footer from '../lib/Footer.svelte'
   import Map from '../lib/Map.svelte'
   import { coords } from '../lib/stores'
+  import BigText from '../lib/BigText.svelte'
 
   export let data
 
@@ -27,6 +28,7 @@
   $: index, updateMap()
 </script>
 
+<BigText />
 <section class="masthead">
   <Header />
 
@@ -53,6 +55,7 @@
     max-width: 600px;
     margin: 0 auto;
     font-size: 1.25rem;
+    padding: 0 10px;
   }
 
   .notes {
@@ -60,9 +63,11 @@
     box-sizing: border-box;
   }
 
-  @media only screen and (max-width: 800px) {
+  @media (max-width: 800px) {
     .notes {
       width: 100%;
+      opacity: 0.99;
+      z-index: unset;
     }
   }
 </style>

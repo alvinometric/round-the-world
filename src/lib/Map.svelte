@@ -86,7 +86,7 @@
     aria-hidden="true"
     alt="Portrait of Andrew Carnegie"
   />
-  <div bind:this={container}>
+  <div class="container" bind:this={container}>
     {#if map}
       <slot />
     {/if}
@@ -94,11 +94,18 @@
 </section>
 
 <style>
-  div {
+  .container {
     position: absolute;
     right: 0;
     width: 40%;
     height: 100vh;
+  }
+
+  @media (max-width: 800px) {
+    .container {
+      width: 100%;
+      height: 50vh;
+    }
   }
 
   .marker {

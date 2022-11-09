@@ -4,21 +4,14 @@
 </script>
 
 <header>
-  <h1>Round The World</h1>
-
-  <HeaderText />
+  <section>
+    <HeaderText />
+  </section>
 </header>
 
 <HeaderElements />
 
 <style>
-  h1 {
-    font-weight: 800;
-    text-align: center;
-    font-size: 4rem;
-    text-transform: uppercase;
-  }
-
   header {
     position: relative;
     margin: 5rem 0 1rem;

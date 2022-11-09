@@ -1,21 +1,22 @@
 <script>
   import { draw } from 'svelte/transition'
-  import { inview } from 'svelte-inview'
+  import { onMount } from 'svelte'
 
   let isInView = false
+  let container
 
-  const options = {
-    rootMargin: '-50px',
-  }
+  let options = { rootMargin: '-50px' }
+
+  onMount(() => {
+    const observer = new IntersectionObserver((entries) => {
+      isInView = entries[0].isIntersecting
+    }, options)
+
+    observer.observe(container)
+  })
 </script>
 
-<div
-  use:inview={options}
-  on:change={(event) => {
-    const { inView } = event.detail
-    isInView = inView
-  }}
->
+<div bind:this={container}>
   <svg width="400" viewBox="0 0 466 91" xmlns="http://www.w3.org/2000/svg">
     {#if isInView}
       <path

@@ -1,19 +1,10 @@
 <script>
   import Signature from './Signature.svelte'
-  import { inview } from 'svelte-inview'
-
-  let isInView
+  import SlideUp from './SlideUp.svelte'
 </script>
 
-<h2
-  use:inview
-  on:change={(event) => {
-    const { inView } = event.detail
-    isInView = inView
-  }}
->
-  <div class:animate={isInView}>Preface</div>
-</h2>
+<SlideUp element="h2">Preface</SlideUp>
+
 <p>
   It seems almost unnecessary to say that "Round the World," like "An American
   Four-in-Hand in Britain," was originally printed for private circulation. My
@@ -43,23 +34,13 @@
 <Signature />
 
 <style>
-  .animate {
-    transform: translateY(0%);
-  }
-
-  h2,
   p {
     font-style: italic;
   }
 
-  h2 div {
-    transform: translateY(100%);
-    transition: transform 0.4s ease-out;
-  }
-
-  h2 {
+  :global(h2) {
     color: var(--highlight);
-    font-weight: 550;
-    overflow: hidden;
+    /* font-weight: 550; */
+    text-align: center;
   }
 </style>
