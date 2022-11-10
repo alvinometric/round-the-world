@@ -12,6 +12,7 @@
   .container {
     max-width: min(80vw, 1200px);
     margin: 5rem auto;
+    text-align: center;
   }
 
   @keyframes slide {
@@ -20,15 +21,16 @@
     }
 
     100% {
-      right: 0%;
+      right: -12%;
     }
   }
 
   img {
     max-height: 2.5rem;
     position: absolute;
-    top: 5px;
+    top: 22.5%;
     animation: 1s forwards slide ease-out var(--delay);
+    z-index: 10;
   }
 
   @keyframes shrink {
@@ -43,17 +45,18 @@
   }
 
   p {
-    text-align: center;
     font-size: 3rem;
     position: relative;
+    display: inline-block;
   }
 
   p:after {
     width: 100%;
-    height: 3rem;
+    height: 4.5rem;
     content: '';
     position: absolute;
     right: 0;
+    z-index: 5;
     background-color: var(--bkg);
     animation: 1s forwards shrink ease-out var(--delay);
   }
