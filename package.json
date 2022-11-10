@@ -21,9 +21,7 @@
   "type": "module",
   "dependencies": {
     "@contentful/rich-text-html-renderer": "^15.13.1",
-    "@sveltejs/svelte-scroller": "^2.0.7",
     "maplibre-gl": "^2.4.0",
-    "sass": "^1.56.1",
-    "svelte-inview": "^3.0.1"
+    "sass": "^1.56.1"
   }
 }

@@ -1,5 +1,5 @@
 <script>
-  import Scroller from '@sveltejs/svelte-scroller'
+  import Scroller from '$lib/Scroller.svelte'
   import Note from '$lib/Note.svelte'
   import Header from '../lib/Header.svelte'
   import Preface from '../lib/Preface.svelte'
@@ -38,7 +38,14 @@
 <BigQuote />
 
 <!-- the Note component is wrapped in an article tag, which I need to specify in "query" -->
-<Scroller top={0} query="article" bind:index bind:offset bind:progress>
+<Scroller
+  top={0}
+  query="article"
+  foregroundZIndex={0}
+  bind:index
+  bind:offset
+  bind:progress
+>
   <Map slot="background" />
 
   <div class="notes" slot="foreground">
@@ -51,11 +58,23 @@
 <Footer />
 
 <style>
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
   .masthead {
     max-width: 600px;
     margin: 0 auto;
     font-size: 1.25rem;
     padding: 0 10px;
+    opacity: 0;
+    animation: 1.2s forwards fade calc(var(--delay) * 1.5);
   }
 
   .notes {

@@ -26,6 +26,13 @@
     },
     layers: [
       {
+        id: 'background',
+        type: 'background',
+        paint: {
+          'background-color': '#A0DBEE',
+        },
+      },
+      {
         id: 'stamen-watercolor',
         type: 'raster',
         source: 'watercolor', // This must match the source key above
