@@ -1,4 +1,4 @@
-import { browser } from '$app/env'
+import { browser } from '$app/environment'
 
 // returns true _only_ if the user has ticked the box
 const getReducedMotion = () => {
