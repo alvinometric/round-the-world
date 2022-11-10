@@ -4,9 +4,7 @@
 </script>
 
 <header>
-  <section>
-    <HeaderText />
-  </section>
+  <HeaderText />
 </header>
 
 <HeaderElements />
@@ -15,5 +13,11 @@
   header {
     position: relative;
     margin: 5rem 0 1rem;
+  }
+
+  @media (max-width: 800px) {
+    header {
+      margin: 2rem 0 0.5rem;
+    }
   }
 </style>

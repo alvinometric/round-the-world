@@ -111,7 +111,7 @@
   @media (max-width: 800px) {
     .container {
       width: 100%;
-      height: 50vh;
+      height: var(--mobile-map-height);
     }
   }
 

@@ -6,6 +6,7 @@
   --bkg: #f8f2e3;
   --highlight: rgb(186, 21, 40);
   --delay: 1.3s;
+  --mobile-map-height: 40vh;
 }
 
 body,
@@ -74,7 +75,7 @@ h1 {
 
 @media (max-width: 800px) {
   h1 {
-    font-size: 5rem;
+    font-size: 4rem;
   }
 }
 

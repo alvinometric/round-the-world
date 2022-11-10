@@ -21,7 +21,7 @@
     }
 
     100% {
-      right: -12%;
+      right: -15%;
     }
   }
 
@@ -62,8 +62,16 @@
   }
 
   @media (max-width: 800px) {
+    .container {
+      margin: 2rem auto;
+    }
+
     p {
-      font-size: 2rem;
+      font-size: 1.5rem;
+    }
+
+    img {
+      animation: none;
     }
   }
 </style>

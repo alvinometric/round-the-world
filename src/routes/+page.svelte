@@ -85,8 +85,7 @@
   @media (max-width: 800px) {
     .notes {
       width: 100%;
-      opacity: 0.99;
-      z-index: unset;
+      padding-top: var(--mobile-map-height);
     }
   }
 </style>
