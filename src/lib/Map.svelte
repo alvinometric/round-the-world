@@ -18,7 +18,7 @@
       labels: {
         type: 'raster',
         tiles: [
-          'http://stamen-tiles-d.a.ssl.fastly.net/toner-labels/{z}/{x}/{y}.png',
+          'https://stamen-tiles-d.a.ssl.fastly.net/toner-labels/{z}/{x}/{y}.png',
         ],
         tileSize: 256,
         maxzoom: 10,

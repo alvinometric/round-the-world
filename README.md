@@ -5,7 +5,7 @@ My first project at Contentful. This is an interactive diary with an accompanyin
 This project uses:
 
 - Sveltekit
-- [MapLibre GL JS](https://maplibre.org/maplibre-gl-js-docs/api/) for map rendering
+- [MapLibreGL JS](https://maplibre.org/maplibre-gl-js-docs/api/) for map rendering
 - Map tiles by [Stamen Design](http://stamen.com), under [CC BY 3.0](http://creativecommons.org/licenses/by/3.0)
 - [Contentful](https://contentful.dev) to manage the daily entries
 - SCSS for styles
