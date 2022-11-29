@@ -9,8 +9,6 @@
   onMount(() => {
     const observer = new IntersectionObserver((entries, observer) => {
       isInView = entries[0].isIntersecting
-      console.log('hi')
-      console.log(isInView)
 
       if (isInView) {
         // only letting it run once as I don't want to impair performance
