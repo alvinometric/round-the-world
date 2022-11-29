@@ -1,60 +1,21 @@
 # Round the world
 
-## 1. First steps
+My first project at Contentful. This is an interactive diary with an accompanying map for each of the entries (also known as "scrollytelling").
 
-Create a barebones app looking at sveltekit concepts
+This project uses:
 
-https://divinalingua.it/en
-
-Use SWAPI REST
-
-Fetch from API
-Create individual components
-Pass props
-
-Droids of star wars: Need 2 requests, 1st species/2 then the people array
-
-with graphql only one request
-
-## 2. Add graphql
-
-Use star wars API ? Sveltekit + GraphQL is ripe from a google search perspective?
-
-https://swapi-graphql.netlify.app/.netlify/functions/index
-
----
-
-https://github.com/prisma-labs/graphql-request
-
-https://explorers.netlify.com/learn/building-with-sveltekit-and-graphcms/fetching-data-in-graphql
-
-```gql
-query Query {
-  species(speciesID: "2") {
-    name
-    personConnection {
-      people {
-        name
-        height
-      }
-    }
-  }
-}
-```
-
-## 3. Grab graphql data from Contentful
-
-Do the rest, add map, etc
+- Sveltekit
+- [MapLibre GL JS](https://maplibre.org/maplibre-gl-js-docs/api/) for map rendering
+- Map tiles by [Stamen Design](http://stamen.com), under [CC BY 3.0](http://creativecommons.org/licenses/by/3.0)
+- [Contentful](https://contentful.dev) to manage the daily entries
+- SCSS for styles
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Once you've created a project and installed dependencies with `npm install`, start a development server:
 
 ```bash
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
 ## Building
@@ -68,3 +29,7 @@ npm run build
 You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+
+## Inspiration
+
+https://divinalingua.it/en
