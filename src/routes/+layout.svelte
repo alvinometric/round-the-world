@@ -2,6 +2,7 @@
   import './global.scss'
   import { MetaTags } from 'svelte-meta-tags'
   let url = 'https://alvin.codes/round-the-world'
+  let socialCard = 'https://alvin.codes/round-the-world/social-card.jpg'
   let title = 'Round The World'
   let description =
     "An interactive diary based on Andrew Carnegie's book called Round The World, published in 1879."
@@ -15,7 +16,7 @@
     url,
     title,
     description,
-    images: [{ url: '/social-card.jpg' }],
+    images: [{ url: socialCard }],
     site_name: title,
   }}
   twitter={{
@@ -23,7 +24,7 @@
     site: '@site',
     cardType: 'summary_large_image',
     title,
-    image: '/social-card.jpg',
+    image: socialCard,
   }}
 />
 
