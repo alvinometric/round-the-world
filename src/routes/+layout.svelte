@@ -1,8 +1,8 @@
 <script>
   import './global.scss'
   import { MetaTags } from 'svelte-meta-tags'
-  let url = 'https://alvin.codes/round-the-world'
-  let socialCard = 'https://alvin.codes/round-the-world/social-card.jpg'
+  let url = 'https://rtw.voyage'
+  let socialCard = 'https://rtw.voyage/social-card.jpg'
   let title = 'Round The World'
   let description =
     "An interactive diary based on Andrew Carnegie's book called Round The World, published in 1879."
