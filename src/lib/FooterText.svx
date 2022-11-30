@@ -1,5 +1,7 @@
 All text and images are in the public domain. The code is released under the MIT license.
 
-Map tiles by [Stamen Design](http://stamen.com), under [CC BY 3.0](http://creativecommons.org/licenses/by/3.0). Data by [OpenStreetMap](http://openstreetmap.org), under [ODbL](http://www.openstreetmap.org/copyright).
+- Map tiles by [Stamen Design](http://stamen.com), under [CC BY 3.0](http://creativecommons.org/licenses/by/3.0)
+- Data by [OpenStreetMap](http://openstreetmap.org), under [ODbL](http://www.openstreetmap.org/copyright)
+- Built with [SvelteKit](https://kit.svelte.dev/) and [MapLibre](https://maplibre.org/)
 
 Made with ❤️ by [Alvin Bryan](https://alvin.codes), the code is on [GitHub](https://github.com/alvinometric/round-the-world).
