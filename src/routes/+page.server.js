@@ -1,9 +1,7 @@
 import { SPACE_ID, ACCESS_TOKEN } from '$env/static/private'
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
 
-console.log(
-  `https://graphql.contentful.com/content/v1/spaces/${SPACE_ID}/explore?access_token=${ACCESS_TOKEN}`
-)
+export const prerender = true
 
 const query = `
 {
