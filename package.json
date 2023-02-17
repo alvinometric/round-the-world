@@ -10,19 +10,19 @@
     "format": "prettier --write --plugin-search-dir=. ."
   },
   "devDependencies": {
-    "@sveltejs/adapter-static": "^1.0.1",
-    "@sveltejs/kit": "^1.0.10",
+    "@sveltejs/adapter-static": "^2.0.1",
+    "@sveltejs/kit": "^1.7.1",
     "mdsvex": "^0.10.6",
-    "prettier": "^2.8.2",
+    "prettier": "^2.8.4",
     "prettier-plugin-svelte": "^2.9.0",
-    "svelte": "^3.55.0",
-    "svelte-meta-tags": "^2.6.4",
-    "vite": "^4.0.4"
+    "svelte": "^3.55.1",
+    "svelte-meta-tags": "^2.6.5",
+    "vite": "^4.1.1"
   },
   "type": "module",
   "dependencies": {
     "@contentful/rich-text-html-renderer": "^16.0.2",
     "maplibre-gl": "^2.4.0",
-    "sass": "^1.57.1"
+    "sass": "^1.58.2"
   }
 }
