@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "^2.0.1",
-    "@sveltejs/kit": "^1.15.1",
+    "@sveltejs/kit": "^1.15.2",
     "mdsvex": "^0.10.6",
     "prettier": "^2.8.7",
     "prettier-plugin-svelte": "^2.10.0",
@@ -23,6 +23,6 @@
   "dependencies": {
     "@contentful/rich-text-html-renderer": "^16.0.3",
     "maplibre-gl": "^2.4.0",
-    "sass": "^1.60.0"
+    "sass": "^1.61.0"
   }
 }
