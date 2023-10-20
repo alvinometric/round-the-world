@@ -10,15 +10,7 @@
       watercolor: {
         type: 'raster',
         tiles: [
-          'https://stamen-tiles.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg',
-        ],
-        tileSize: 256,
-        maxzoom: 10,
-      },
-      labels: {
-        type: 'raster',
-        tiles: [
-          'https://stamen-tiles-d.a.ssl.fastly.net/toner-labels/{z}/{x}/{y}.png',
+          'https://tiles.stadiamaps.com/tiles/stamen_watercolor/{z}/{x}/{y}.jpg',
         ],
         tileSize: 256,
         maxzoom: 10,
@@ -36,11 +28,6 @@
         id: 'stamen-watercolor',
         type: 'raster',
         source: 'watercolor', // This must match the source key above
-      },
-      {
-        id: 'stamen-label',
-        type: 'raster',
-        source: 'labels',
       },
     ],
   }
@@ -62,7 +49,7 @@
     })
 
     map.on('load', function () {
-      marker = new maplibregl.Marker(customMarker).setLngLat(center).addTo(map)
+      marker = new maplibregl.Marker({element: customMarker} ).setLngLat(center).addTo(map)
       map.scrollZoom.disable()
     })
   })
