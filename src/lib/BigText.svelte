@@ -1,11 +1,11 @@
 <script>
   import SlideUp from './SlideUp.svelte'
-  import contentful from '$lib/assets/contentful.svg'
+  import sveltekit from '$lib/assets/sveltekit.svg'
 </script>
 
 <div class="container">
   <SlideUp element="h1">Round The World</SlideUp>
-  <p>A Contentful Project <img src={contentful} alt="contentful logo" /></p>
+  <p>A Sveltekit Project <img src={sveltekit} alt="sveltekit logo" /></p>
 </div>
 
 <style>
@@ -17,10 +17,14 @@
 
   @keyframes slide {
     0% {
+      opacity: 1;
+      rotate: 0deg;
       right: 90%;
     }
 
     100% {
+      opacity: 1;
+      rotate: 720deg;
       right: -15%;
     }
   }
@@ -29,6 +33,8 @@
     max-height: 2.5rem;
     position: absolute;
     top: 22.5%;
+    opacity: 0;
+    right: 90%;
     animation: 1s forwards slide ease-out var(--delay);
     z-index: 10;
   }
