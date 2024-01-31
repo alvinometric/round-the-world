@@ -1,42 +1,26 @@
-import { SPACE_ID, ACCESS_TOKEN } from '$env/static/private'
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
+import fs from 'node:fs'
+import path from 'node:path'
+import matter from 'gray-matter'
+import markdownit from 'markdown-it'
+const md = markdownit()
 
 export const prerender = true
 
-const query = `
-{
-  noteCollection{
-    items{
-      date
-      location
-      coordinates {
-        lat
-        lon
+export function load() {
+  let dir = './content'
+  let files = fs.readdirSync(dir)
+
+  files = files.filter((file) => path.extname(file) === '.md')
+
+  if (files.length) {
+    let items = files.map((file) => {
+      let raw = fs.readFileSync(path.join(dir, file), 'utf-8')
+      let parsed = matter(raw)
+      return {
+        content: parsed.content,
+        ...parsed.data,
       }
-      content{
-        json
-      }
-    }
-  }
-}
-`
-
-export async function load() {
-  const url = 'https://graphql.contentful.com/content/v1/spaces/' + SPACE_ID
-
-  const response = await fetch(url, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: 'Bearer ' + ACCESS_TOKEN,
-    },
-    body: JSON.stringify({ query }),
-  })
-
-  if (response.ok) {
-    const { data } = await response.json()
-
-    const { items } = data.noteCollection
+    })
     const formatOptions = {
       month: 'long',
       day: 'numeric',
@@ -45,11 +29,6 @@ export async function load() {
     }
 
     const notes = items
-      .map((i) => {
-        const date = new Date(i.date)
-        i.date = date
-        return i
-      })
       .sort((a, b) => a.date - b.date)
       .map((i) => {
         const { coordinates, location, date } = i
@@ -62,7 +41,7 @@ export async function load() {
           coordinates,
           location,
           date: formattedDate,
-          text: documentToHtmlString(i.content.json),
+          text: md.render(i.content),
         }
       })
 
@@ -74,7 +53,7 @@ export async function load() {
   return {
     status: 404,
     errors: {
-      message: 'Cannot Connect to the API',
+      message: 'Sorry, cannot find content',
     },
   }
 }
