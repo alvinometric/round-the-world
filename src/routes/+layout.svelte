@@ -1,5 +1,5 @@
 <script>
-  import './global.scss'
+  import './global.css'
   import { MetaTags } from 'svelte-meta-tags'
   let url = 'https://rtw.voyage'
   let socialCard = 'https://rtw.voyage/social-card.jpg'
