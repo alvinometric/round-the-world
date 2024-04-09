@@ -13,7 +13,7 @@
   <section>{@html text}</section>
 </article>
 
-<style lang="scss">
+<style>
   h3 {
     margin-bottom: 0;
   }
